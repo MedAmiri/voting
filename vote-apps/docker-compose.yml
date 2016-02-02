@@ -4,16 +4,21 @@ voting-app:
     - ./voting-app:/app
   ports:
     - "5000:80"
+  links:
+    - "redis"
 
 redis:
-  image: redis
+  image: hypriot/rpi-redis
   ports: ["6379"]
 
 worker:
   build: ./worker
+  links:
+    - "redis"
+    - "db"
 
 db:
-  image: postgres:9.4
+  image: ldouchy/rpi-postgres
   volumes:
     - "myvolume:/var/lib/postgresql/data"
 
@@ -23,3 +28,5 @@ result-app:
     - ./result-app:/app
   ports:
     - "5001:80"
+  links:
+    - "db"

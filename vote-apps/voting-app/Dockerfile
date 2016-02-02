@@ -1,12 +1,12 @@
 # Using official python runtime base image
-FROM python:2.7
+FROM hypriot/rpi-python
 
 # Set the application directory
 WORKDIR /app
 
 # Install our requirements.txt
 ADD requirements.txt /app/requirements.txt
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --proxy=10.0.4.2:3128
 
 # Copy our code from the current folder to /app inside the container
 ADD . /app
