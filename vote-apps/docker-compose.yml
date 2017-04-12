@@ -8,7 +8,7 @@ voting-app:
     - "redis"
 
 redis:
-  image: hypriot/rpi-redis
+  image: redis
   ports: ["6379"]
 
 worker:
@@ -18,7 +18,7 @@ worker:
     - "db"
 
 db:
-  image: ldouchy/rpi-postgres
+  image: postgres
   volumes:
     - "myvolume:/var/lib/postgresql/data"
 
