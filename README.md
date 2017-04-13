@@ -19,4 +19,5 @@ Since this app makes use of Compose's experimental networking support, it must b
     $ docker-compose --x-networking up -d
 
 The app will be running on port 5000 on your Docker host, and the results will be on port 5001.
-Fork from https://github.com/bfirsh/example-voting-app.git
+
+Forked from https://github.com/bfirsh/example-voting-app.git
