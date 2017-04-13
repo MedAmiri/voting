@@ -1,7 +1,7 @@
 voting-app:
-  build: ./voting-app/.
+  build: ./voting/.
   volumes:
-    - ./voting-app:/app
+    - ./voting:/app
   ports:
     - "5000:80"
   links:
@@ -23,9 +23,9 @@ db:
     - "myvolume:/var/lib/postgresql/data"
 
 result-app:
-  build: ./result-app/.
+  build: ./result/.
   volumes:
-    - ./result-app:/app
+    - ./result:/app
   ports:
     - "5001:80"
   links:
